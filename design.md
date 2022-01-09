@@ -42,6 +42,13 @@
 
 ## Climber 🚧
 
+- ### Capabilities
+
+  - Being able to know current
+
+- ### Devices
+  - REV Neos'?
+
 ## Networking 🚧
 
 - #### Capabilities
