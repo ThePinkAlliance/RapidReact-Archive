@@ -4,15 +4,27 @@
 
 package frc.robot;
 
+import com.swervedrivespecialties.swervelib.Mk4SwerveModuleHelper;
+
 /**
- * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
- * constants. This class should not be used for any other purpose. All constants should be declared
+ * The Constants class provides a convenient place for teams to hold robot-wide
+ * numerical or boolean
+ * constants. This class should not be used for any other purpose. All constants
+ * should be declared
  * globally (i.e. public static). Do not put anything functional in this class.
  *
- * <p>It is advised to statically import this class (or one of its inner classes) wherever the
+ * <p>
+ * It is advised to statically import this class (or one of its inner classes)
+ * wherever the
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
+  public static Mk4SwerveModuleHelper.GearRatio motorRatio = Mk4SwerveModuleHelper.GearRatio.L4;
+
+  public static final double MAX_VELOCITY_METERS_PER_SECOND = 4.14528;
+  public static final double MAX_ANGULAR_VELOCITY_RADIANS_PER_SECOND = Constants.MAX_VELOCITY_METERS_PER_SECOND
+      / Math.hypot(Constants.DRIVETRAIN_TRACKWIDTH_METERS / 2.0, Constants.DRIVETRAIN_WHEELBASE_METERS / 2.0);
+
   public static double DRIVETRAIN_WHEELBASE_METERS = 10;
   public static double DRIVETRAIN_TRACKWIDTH_METERS = 5;
 
