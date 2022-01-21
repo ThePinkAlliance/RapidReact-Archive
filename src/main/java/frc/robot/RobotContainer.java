@@ -38,7 +38,7 @@ public class RobotContainer {
   private final Joystick gamepad_base = new Joystick(0);
   private final Base m_base = new Base();
 
-  private final SelectableTrajectory leaveBlueOne = new SelectableTrajectory("Leave Blue One",
+  private final SelectableTrajectory leaveBlueLeft = new SelectableTrajectory("Leave Blue Left",
       "output/LeaveBlue1.wpilib.json");
 
   Trajectory trajectory = new Trajectory();
@@ -53,7 +53,7 @@ public class RobotContainer {
     // Configure the button bindings
     configureButtonBindings();
 
-    selectedPath.setDefaultOption("Leave Blue One", leaveBlueOne);
+    selectedPath.setDefaultOption(leaveBlueLeft.name, leaveBlueLeft);
 
     driverDashboard.add(selectedPath);
 
@@ -86,19 +86,6 @@ public class RobotContainer {
   public Command getAutonomousCommand() {
     // set the current trajectory to execute
     selectTrajectory(selectedPath.getSelected());
-
-    // An ExampleCommand will run in autonomous
-    TrajectoryConstraint autoConstraint = new SwerveDriveKinematicsConstraint(m_base.kinematics,
-        Constants.kMaxSpeedMetersPerSecond);
-
-    // Create config for trajectory
-    TrajectoryConfig config = new TrajectoryConfig(
-        Constants.kMaxSpeedMetersPerSecond,
-        Constants.kMaxAccelerationMetersPerSecondSquared)
-            // Add kinematics to ensure max speed is actually obeyed
-            .setKinematics(m_base.kinematics)
-            // Apply the voltage constraint
-            .addConstraint(autoConstraint);
 
     m_base.resetOdometry(new Pose2d(0.0, 0.0, new Rotation2d()));
 
