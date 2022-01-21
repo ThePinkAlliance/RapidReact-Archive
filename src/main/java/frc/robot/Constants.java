@@ -22,8 +22,24 @@ public final class Constants {
   public static Mk4SwerveModuleHelper.GearRatio motorRatio = Mk4SwerveModuleHelper.GearRatio.L4;
 
   public static final double MAX_VELOCITY_METERS_PER_SECOND = 4.14528;
+  public static final double MAX_ACCELERATION_METERS_PER_SECOND = 6.346;
   public static final double MAX_ANGULAR_VELOCITY_RADIANS_PER_SECOND = Constants.MAX_VELOCITY_METERS_PER_SECOND
       / Math.hypot(Constants.DRIVETRAIN_TRACKWIDTH_METERS / 2.0, Constants.DRIVETRAIN_WHEELBASE_METERS / 2.0);
+
+  public static final double ksVolts = 0.22;
+  public static final double kvVoltSecondsPerMeter = 1.98;
+  public static final double kaVoltSecondsSquaredPerMeter = 0.2;
+
+  // Example value only - as above, this must be tuned for your drive!
+  public static final double kPDriveVel = 8.5;
+
+  public static final double kMaxSpeedMetersPerSecond = 3;
+  public static final double kMaxAccelerationMetersPerSecondSquared = 3;
+
+  // Reasonable baseline values for a RAMSETE follower in units of meters and
+  // seconds
+  public static final double kRamseteB = 2;
+  public static final double kRamseteZeta = 0.7;
 
   public static double DRIVETRAIN_WHEELBASE_METERS = 10;
   public static double DRIVETRAIN_TRACKWIDTH_METERS = 5;

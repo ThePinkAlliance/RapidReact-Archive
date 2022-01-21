@@ -47,9 +47,8 @@ public class Drive extends CommandBase {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-
     // this will set the target meter per second to 0
-    // other wise the robot will not stop when the command is stoped
+    // other wise the robot will not stop when the command is terminated
     this.base.drive(new ChassisSpeeds(0, 0, 0));
   }
 
